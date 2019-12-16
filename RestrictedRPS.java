@@ -28,14 +28,7 @@ public class RestrictedRPS{
               b--;
               win++;
             }
-            else if( a !=0){
-              ans.append('R');
-              a--;
-            }
-            else{
-              c--;
-              ans.append('S');
-            }
+            else {ans.append('?');}
         }
 
         if(s.charAt(k) == 'P'){
@@ -44,14 +37,7 @@ public class RestrictedRPS{
             c--;
             win++;
           }
-          else if( a !=0){
-            ans.append('R');
-            a--;
-          }
-          else{
-            b--;
-            ans.append('P');
-          }
+          else{ans.append('?');}
         }
 
         if(s.charAt(k) == 'S'){
@@ -60,20 +46,35 @@ public class RestrictedRPS{
             a--;
             win++;
           }
-          else if( b !=0){
-            ans.append('P');
-            b--;
-          }
-          else{
-            c--;
-            ans.append('S');
-          }
+          else{ans.append('?');}
         }
       }
 
-      if(win >= (n/2) + 1){
+      if(win >= (n/2) + n%2){
         System.out.println("YES");
-        System.out.println(ans);
+        for(int z = 0;z < ans.length(); z++){
+          if(ans.charAt(z) != '?'){
+            System.out.print(ans.charAt(z));
+            continue;
+          }
+          else{
+            if(a !=0){
+              System.out.print('R');
+              a--;
+              continue;
+            }else if(b!=0){
+              System.out.print('P');
+              b--;
+              continue;
+            }
+            else{
+              System.out.print('S');
+              c--;
+              continue;
+            }
+          }
+        }
+        System.out.println();
       }
       else{
         System.out.println("NO");
