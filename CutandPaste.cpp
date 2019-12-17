@@ -1,45 +1,39 @@
 // URL: https://codeforces.com/problemset/problem/1280/A
-// unsolved
+// solved
 
 
 #include <iostream>
 #include <string>
+#define MOD 1000000007
 using namespace std;
 int main(){
 
   int cases;
   cin>>cases;
   for (size_t i = 0; i < cases; i++) {
-    int x;
-    string s;
-    long long len = 0;
-
-    cin>>x>>s;
-
-    len = 0;
-
-    for (int l = 1; l <= x; l++) {
-      if(len<x){
-       string c;
-       c = s.substr(l);
-       s = s.substr(0,l);
-       for (int k = 0; k < s[l-1] - 48 ; k++) {
-         s += c;
-         if(s.length() >= x){
-           len = (l + ((s[l-1] - 48)* c.length())) % (1000000007);
-           break;
+     int n;
+     string s;
+     int cur=0,len,rcnt;
+     cin>>n>>s;
+     len=s.length();
+     string right;
+     while(cur < n)
+     {
+         cur++;
+         int c=s[cur-1]-'0';
+         if(c==1)
+             continue;
+         if(s.length() < n)
+             right=s.substr(cur,s.length()-cur);
+         rcnt=(len-cur+MOD)%MOD;
+         c--;
+         while(c--)
+         {
+             if(s.length() < n)
+                 s+=right;
+             len=(len+rcnt)%MOD;
          }
-         len = s.length();
-       }
-
      }
-     else{
-       len = (l + ((s[l-1] - 48)* (len-l))) % (1000000007);
-     }
-     // len = len % (1000000007);
-    }
-
-    // len = len % (1000000007);
-    std::cout << len << '\n';
+     cout<<len<<endl;
   }
 }
