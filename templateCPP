@@ -1,0 +1,12 @@
+#include <iostream>
+#include <vector>
+#include <cstring>
+
+#define pb push_back
+using namespace std;
+
+int main(int argc, char const *argv[]) {
+
+
+  return 0;
+}
