@@ -1,12 +1,35 @@
 #include <iostream>
 #include <vector>
+#include <thread>
+#include <map>
 #include <cstring>
 
 #define pb push_back
+#define fo(i, a, b) for(int i=a;i<b;i++)
+#define GCD(a, b) __gcd(a,b)
+#define TESTCASE int t;cin>>t;while(t--)
+#define INF LLONG_MAX
+#define NINF LLONG_MIN
+
 using namespace std;
+
+// threading function
+
 
 int main(int argc, char const *argv[]) {
 
+  thread t1(
+    // function call , //arguments
+  );
+
+  try{
+    // code
+  }  catch(...){
+    t1.join();
+    throw;
+  }
+
+  t1.join();
 
   return 0;
 }
