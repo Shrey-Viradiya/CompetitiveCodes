@@ -1,8 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <thread>
-#include <map>
-#include <cstring>
+#include <bits/stdc++.h>
 
 #define pb push_back
 #define fo(i, a, b) for(int i=a;i<b;i++)
