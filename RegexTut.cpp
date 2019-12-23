@@ -24,7 +24,7 @@ int main() {
     // std::cout << "Tutorial 2" << '\n';
     //
     // s = "Shrey Tirth Machine Learning";
-    // regex r("(.*) (.*) (.*) (.*)");
+    // regex r("(.*)   (.*) (.*) (.*)");
     //
     // smatch ma;
     //
